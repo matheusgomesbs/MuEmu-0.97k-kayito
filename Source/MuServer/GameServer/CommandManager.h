@@ -35,6 +35,8 @@ enum eCommandNumber
 	COMMAND_GM_CLEARINV = 27,
 	COMMAND_GM_SKIN = 28,
 	COMMAND_GM_MAKEMOB = 29,
+	COMMAND_MOVE_BAR = 30,
+	COMMAND_MOVE_BAU = 31,
 };
 
 //**********************************************//
@@ -220,6 +222,10 @@ public:
 	void CommandGMSkin(LPOBJ lpObj, char* arg);
 
 	void CommandGMMakeMob(LPOBJ lpObj, char* arg);
+
+	void CommandMoveBar(LPOBJ lpObj);
+
+	void CommandMoveBau(LPOBJ lpObj);
 
 private:
 

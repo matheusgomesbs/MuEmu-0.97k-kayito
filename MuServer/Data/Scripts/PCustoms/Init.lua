@@ -1,0 +1,8 @@
+OpenProtectExtension('PCustoms\\Utils')
+OpenProtectExtension('PCustoms\\Configs')
+OpenProtectExtension('PCustoms\\Shop')
+OpenProtectExtension('PCustoms\\Commands')
+OpenProtectExtension('PCustoms\\Systems')
+OpenProtectExtension('PCustoms\\Config Events')
+OpenProtectExtension('PCustoms\\Events')
+LogAddC(4, "[Serverinfo] PCustoms loaded successfully")

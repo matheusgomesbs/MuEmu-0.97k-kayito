@@ -53,6 +53,9 @@
     <Filter Include="Interface">
       <UniqueIdentifier>{c2cb8b9d-6921-4790-b2ec-ea1e226efb9b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="WideScreen">
+      <UniqueIdentifier>{3595f6fc-4c61-4b98-b15d-854772f41c6f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CCRC32.H">
@@ -205,6 +208,9 @@
     <ClInclude Include="CustomMonster.h">
       <Filter>Monster</Filter>
     </ClInclude>
+    <ClInclude Include="WideScreen.h">
+      <Filter>WideScreen</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CCRC32.Cpp">
@@ -341,6 +347,9 @@
     </ClCompile>
     <ClCompile Include="CustomMonster.cpp">
       <Filter>Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="WideScreen.cpp">
+      <Filter>WideScreen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

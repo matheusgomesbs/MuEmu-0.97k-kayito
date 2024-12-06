@@ -3,6 +3,7 @@
 #include "DefaultClassInfo.h"
 #include "Party.h"
 #include "User.h"
+#include "CustomDeathMessage.h" 
 
 class CServerInfo
 {
@@ -377,6 +378,13 @@ public:
 	// Custom
 	long m_AnnounceChaosMix;
 	char m_AnnounceChaosMixText[50];
+	int m_BarMoveCoordX;
+	int m_BarMoveCoordY;
+	int m_BauMoveCoordX;
+	int m_BauMoveCoordY;
+	int m_InfinityArrow;
+	int m_AnnounceGM;
+	int m_CustomDeathMessage;
 };
 
 extern CServerInfo gServerInfo;

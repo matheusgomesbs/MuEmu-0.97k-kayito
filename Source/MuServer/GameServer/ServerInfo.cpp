@@ -1243,6 +1243,18 @@ void CServerInfo::ReadCommandInfo(char* section, char* path)
 	this->m_CommandWareNumber[2] = GetPrivateProfileInt(section, "CommandWareNumber_AL2", 0, path);
 
 	this->m_CommandWareNumber[3] = GetPrivateProfileInt(section, "CommandWareNumber_AL3", 0, path);
+
+	// Custom Matheus
+
+	// Move Bar
+	this->m_BarMoveCoordX = GetPrivateProfileInt(section, "BarCoordX ", 124, path);
+
+	this->m_BarMoveCoordY = GetPrivateProfileInt(section, "BarCoordY ", 130, path);
+	
+	// Move Bau
+	this->m_BauMoveCoordX = GetPrivateProfileInt(section, "BauCoordX ", 147, path);
+
+	this->m_BauMoveCoordY = GetPrivateProfileInt(section, "BauCoordY ", 110, path);
 }
 
 void CServerInfo::ReadCommonInfo(char* section, char* path)
@@ -1491,7 +1503,15 @@ void CServerInfo::ReadCustomInfo(char* section, char* path)
 {
 	this->m_AnnounceChaosMix = GetPrivateProfileInt(section, "AnnounceChaosMix", 0, path);
 
+	this->m_InfinityArrow = GetPrivateProfileInt(section, "InfinityArrow", 0, path);
+
+	this->m_AnnounceGM = GetPrivateProfileInt(section, "AnnounceGM", 0, path);
+	
+	this->m_CustomDeathMessage = GetPrivateProfileInt(section, "CustomDeathMessage", 0, path);
+
 	GetPrivateProfileString(section, "AnnounceChaosMixText", "", this->m_AnnounceChaosMixText, sizeof(this->m_AnnounceChaosMixText), path);
+
+	gCustomDeathMessage.Load(gPath.GetFullPath("Custom\\CustomDeathMessage.txt"));
 }
 
 void CServerInfo::ReadEventInfo(char* section, char* path)

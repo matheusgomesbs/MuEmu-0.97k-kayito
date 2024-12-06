@@ -1,4 +1,4 @@
-#include "stdafx.h"
+﻿#include "stdafx.h"
 #include "Patchs.h"
 #include "PrintPlayer.h"
 #include "Protect.h"
@@ -169,6 +169,26 @@ void CPatchs::Init()
 	SetCompleteHook(0xE9, 0x0043FD70, &this->CalcFPS);
 
 	SetCompleteHook(0xE9, 0x00501C26, &this->FixPigeons);
+
+	// Custom
+	SetByte(0x508358 + 2, 0x50); // Fix Limite Sword
+	SetByte(0x50844D + 2, 0x50); // Fix Limite Axe
+	SetByte(0x508478 + 2, 0x50); // Fix Limite Mace
+	SetByte(0x5084BC + 2, 0x50); // Fix Limite Spear
+	SetByte(0x508500 + 2, 0x50); // Fix Limite Shield
+	SetByte(0x50855A + 2, 0x50); // Fix Limite Staff
+	SetByte(0x508607 + 2, 0x50); // Fix Limite Bow
+	SetByte(0x508632 + 2, 0x50); // Fix Limite CrossBow
+
+	SetByte(0x506F76 + 2, 0x20); // Fix Limite Sets
+	SetByte(0x50736A + 2, 0x20); // Fix Limite Sets
+
+	SetByte(0x509037 + 2, 0x20); // Fix Limite Item Texture
+	SetByte(0x507849 + 2, 0x20); // Fix Limite Player Texture
+
+	SetByte(0x5056E1 + 2, 0x10); // Brilho + 15
+
+	MemorySet(0x004E0383, 0x90, 22); // Sell Quest Items in NPC
 }
 
 __declspec(naked) void CPatchs::ReduceCPU()

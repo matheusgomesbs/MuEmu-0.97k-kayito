@@ -31,6 +31,7 @@
 #include "ServerInfo.h"
 #include "SkillManager.h"
 #include "Trade.h"
+#include "CustomDeathMessage.h" 
 #include "Util.h"
 
 CObjectManager gObjectManager;
@@ -2900,6 +2901,10 @@ void CObjectManager::CharacterLifeCheck(LPOBJ lpObj, LPOBJ lpTarget, int damage,
 		lpTarget->Teleport = ((lpTarget->Teleport == 1) ? 0 : lpTarget->Teleport);
 
 		GCUserDieSend(lpTarget, lpTarget->Index, skill, lpObj->Index);
+
+		if (lpObj->Type == OBJECT_MONSTER && gServerInfo.m_CustomDeathMessage == 1) {
+			gCustomDeathMessage.GetDeathText(lpTarget, lpObj, lpObj->Class);
+		}
 
 		if (lpTarget->Type == OBJECT_MONSTER)
 		{

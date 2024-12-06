@@ -59,6 +59,12 @@
     <Filter Include="Connection\Protocols">
       <UniqueIdentifier>{87c9e7c3-6006-4827-aa75-d2e18e5aa759}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Custom">
+      <UniqueIdentifier>{78840430-8566-4fb2-8c46-db48ecd8808f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Custom\DeathMessage">
+      <UniqueIdentifier>{6b5750b2-6cd2-4e5d-85bf-08f0d0104a6b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="small.ico">
@@ -360,6 +366,9 @@
     <ClInclude Include="ReadScript.h">
       <Filter>Util Files</Filter>
     </ClInclude>
+    <ClInclude Include="CustomDeathMessage.h">
+      <Filter>Custom\DeathMessage</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Math.cpp">
@@ -646,6 +655,9 @@
     </ClCompile>
     <ClCompile Include="ReadScript.cpp">
       <Filter>Util Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomDeathMessage.cpp">
+      <Filter>Custom\DeathMessage</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

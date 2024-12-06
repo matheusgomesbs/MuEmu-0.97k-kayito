@@ -526,6 +526,20 @@ bool CCommandManager::ManagementCore(LPOBJ lpObj, char* message)
 
 			break;
 		}
+
+		case COMMAND_MOVE_BAR:
+		{
+			this->CommandMoveBar(lpObj);
+
+			break;
+		}
+
+		case COMMAND_MOVE_BAU:
+		{
+			this->CommandMoveBau(lpObj);
+
+			break;
+		}
 	}
 
 	lpObj->Money -= CommandData.Money[lpObj->AccountLevel];
@@ -2044,4 +2058,34 @@ void CCommandManager::CommandGMMakeMob(LPOBJ lpObj, char* arg)
 	gNotice.GCNoticeSend(lpObj->Index, 1, gMessage.GetTextMessage(102, lpObj->Lang));
 
 	gLog.Output(LOG_COMMAND, "[CommandMakeMob][%s][%s] - (Monster: %d, Qtd: %d)", lpObj->Account, lpObj->Name, monster, qtd);
+}
+
+void CCommandManager::CommandMoveBar(LPOBJ lpObj)
+{
+	// Verifica se o objeto é válido
+	if (lpObj == NULL)
+	{
+		return;
+	}
+
+	LPOBJ lpTarget = gObjFind(lpObj->Name);
+
+	gObjTeleport(lpTarget->Index, 0, gServerInfo.m_BarMoveCoordX, gServerInfo.m_BarMoveCoordY);
+
+	gLog.Output(LOG_COMMAND, "[CommandMoveBar][%s][%s] - (Map: %d, X: %d, Y: %d)", lpObj->Account, lpObj->Name, 0, gServerInfo.m_BarMoveCoordX, gServerInfo.m_BarMoveCoordY);
+}
+
+void CCommandManager::CommandMoveBau(LPOBJ lpObj)
+{
+	// Verifica se o objeto é válido
+	if (lpObj == NULL)
+	{
+		return;
+	}
+
+	LPOBJ lpTarget = gObjFind(lpObj->Name);
+
+	gObjTeleport(lpTarget->Index, 0, gServerInfo.m_BauMoveCoordX, gServerInfo.m_BauMoveCoordY);
+
+	gLog.Output(LOG_COMMAND, "[CommandMoveBau][%s][%s] - (Map: %d, X: %d, Y: %d)", lpObj->Account, lpObj->Name, 0, gServerInfo.m_BauMoveCoordX, gServerInfo.m_BauMoveCoordY);
 }

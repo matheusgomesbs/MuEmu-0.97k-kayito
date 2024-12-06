@@ -26,6 +26,7 @@
 #include "Util.h"
 #include "Viewport.h"
 #include "Warehouse.h"
+#include "GameMaster.h"
 
 void DataServerProtocolCore(BYTE head, BYTE* lpMsg, int size)
 {
@@ -717,6 +718,12 @@ void DGCharacterInfoRecv(SDHP_CHARACTER_INFO_RECV* lpMsg)
 	//LogAdd(LOG_USER, "[ObjectManager][%d] AddCharacterInfo (%s)", lpObj->Index, lpObj->Name);
 
 	gLog.Output(LOG_CONNECT, "[ObjectManager][%d] AddCharacterInfo (%s)", lpObj->Index, lpObj->Name);
+
+
+	if (gServerInfo.m_AnnounceGM == 1 && gGameMaster.CheckGameMasterLevel(lpObj, 1))
+	{
+		gNotice.GCNoticeSendToAll(0, gMessage.GetTextMessage(107, lpObj->Lang), lpObj->Name);
+	}
 }
 
 void GDCharacterInfoSaveSend(int aIndex)

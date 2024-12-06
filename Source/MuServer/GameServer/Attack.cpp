@@ -468,6 +468,12 @@ bool CAttack::DecreaseArrow(LPOBJ lpObj)
 		return true;
 	}
 
+	//Infinity Arrow
+	if (gServerInfo.m_InfinityArrow == 1)
+	{
+		return true;
+	}
+
 	if (lpObj->Inventory[0].m_Index >= GET_ITEM(4, 0) && lpObj->Inventory[0].m_Index < GET_ITEM(5, 0) && lpObj->Inventory[0].m_Index != GET_ITEM(4, 15) && lpObj->Inventory[0].m_Slot == 0)
 	{
 		if (lpObj->Inventory[1].m_Index != GET_ITEM(4, 7) || lpObj->Inventory[1].m_Durability < 1)

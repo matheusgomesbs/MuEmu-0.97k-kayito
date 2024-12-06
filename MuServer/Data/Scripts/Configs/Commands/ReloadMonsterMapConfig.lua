@@ -1,0 +1,7 @@
+--[[
+    /reloadmonster <map>
+]]
+
+RELOAD_MONSTER_MAP_SWITCH = 0
+RELOAD_MONSTER_MAP_SYNTAX = '/reloadmonster'
+RELOAD_MONSTER_MAP_GAME_MASTER_LEVEL = 1
