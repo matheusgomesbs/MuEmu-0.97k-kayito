@@ -208,8 +208,8 @@
     <ClInclude Include="CustomMonster.h">
       <Filter>Monster</Filter>
     </ClInclude>
-    <ClInclude Include="WideScreen.h">
-      <Filter>WideScreen</Filter>
+    <ClInclude Include="CustomBow.h">
+      <Filter>Item</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -348,8 +348,8 @@
     <ClCompile Include="CustomMonster.cpp">
       <Filter>Monster</Filter>
     </ClCompile>
-    <ClCompile Include="WideScreen.cpp">
-      <Filter>WideScreen</Filter>
+    <ClCompile Include="CustomBow.cpp">
+      <Filter>Item</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
