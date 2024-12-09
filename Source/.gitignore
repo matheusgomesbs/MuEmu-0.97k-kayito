@@ -12,3 +12,5 @@ bin/
 
 # C# packages
 packages/
+
+GameServer.vcxproj.filters
