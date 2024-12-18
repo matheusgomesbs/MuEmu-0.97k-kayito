@@ -48,14 +48,9 @@ bool CItemManager::CheckPickedItemOverlay(int MousePosX, int MousePosY, DWORD In
 
 	int SlotY = (int)((MouseY - MousePosY) * 0.05f - ItemInfo->Height * 0.5f + 0.5f);
 
-	BYTE slot = gItemManager.InterfaceRectCheck(SlotX, SlotY, ItemInfo->Width, ItemInfo->Height, InterfaceOffset, InterfaceWidth, InterfaceHeight);
+	BYTE slot = this->InterfaceRectCheck(SlotX, SlotY, ItemInfo->Width, ItemInfo->Height, InterfaceOffset, InterfaceWidth, InterfaceHeight);
 
-	if (slot != 0xFF)
-	{
-		return true;
-	}
-
-	return false;
+	return (slot != 0xFF);
 }
 
 bool CItemManager::GetInterfaceEmptySlot(int MousePosX, int MousePosY, DWORD InterfaceOffset, int InterfaceWidth, int InterfaceHeight)

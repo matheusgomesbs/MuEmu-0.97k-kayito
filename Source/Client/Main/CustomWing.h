@@ -63,6 +63,11 @@ private:
 
 	static void CustomWing_InventoryCheck();
 
+<<<<<<< HEAD
+=======
+	static void CustomWing_EquipmentCheck();
+
+>>>>>>> upstream/master
 	static void CustomWingInventoryEquipment_IcarusWingCount();
 
 	static void CustomWingInventoryEquipment_PickCheck();

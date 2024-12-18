@@ -126,6 +126,11 @@ void CCustomWing::Init()
 
 	SetCompleteHook(0xE9, 0x004CC572, &this->CustomWing_InventoryCheck);
 
+<<<<<<< HEAD
+=======
+	SetCompleteHook(0xE9, 0x004CE65E, &this->CustomWing_EquipmentCheck);
+
+>>>>>>> upstream/master
 	SetCompleteHook(0xE9, 0x004D1659, &this->CustomWingInventoryEquipment_IcarusWingCount);
 	SetCompleteHook(0xE9, 0x004D1682, &this->CustomWingInventoryEquipment_PickCheck);
 
@@ -553,6 +558,44 @@ EXIT:
 	}
 }
 
+<<<<<<< HEAD
+=======
+_declspec(naked) void CCustomWing::CustomWing_EquipmentCheck()
+{
+	static DWORD jmpOnOk = 0x004CE6E0;
+	static DWORD jmpOnNot = 0x004CE665;
+
+	static int ItemIndex;
+
+	_asm
+	{
+		Mov Dx, Word Ptr Ds : [0x07E91350] ; // pPickedItem
+		Pushad;
+		Movsx Edx, Dx;
+		Mov ItemIndex, Edx;
+	}
+
+	if (gCustomWing.GetInfoByIndex(ItemIndex) == NULL)
+	{
+		goto EXIT;
+	}
+
+	_asm
+	{
+		Popad;
+		Jmp[jmpOnOk];
+	}
+
+EXIT:
+
+	_asm
+	{
+		Popad;
+		Jmp[jmpOnNot];
+	}
+}
+
+>>>>>>> upstream/master
 _declspec(naked) void CCustomWing::CustomWingInventoryEquipment_IcarusWingCount()
 {
 	static DWORD jmpOnOk = 0x004D166C;

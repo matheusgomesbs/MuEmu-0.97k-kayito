@@ -367,8 +367,13 @@
       <Filter>Util Files</Filter>
     </ClInclude>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ClInclude Include="CustomDeathMessage.h">
       <Filter>Custom\DeathMessage</Filter>
+=======
+    <ClInclude Include="CustomWing.h">
+      <Filter>Items</Filter>
+>>>>>>> upstream/master
 =======
     <ClInclude Include="CustomWing.h">
       <Filter>Items</Filter>
@@ -662,8 +667,13 @@
       <Filter>Util Files</Filter>
     </ClCompile>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <ClCompile Include="CustomDeathMessage.cpp">
       <Filter>Custom\DeathMessage</Filter>
+=======
+    <ClCompile Include="CustomWing.cpp">
+      <Filter>Items</Filter>
+>>>>>>> upstream/master
 =======
     <ClCompile Include="CustomWing.cpp">
       <Filter>Items</Filter>
